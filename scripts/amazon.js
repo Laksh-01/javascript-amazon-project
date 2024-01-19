@@ -22,7 +22,7 @@ products.forEach((product)=>{
       $${(product.priceCents / 100).toFixed(2)}
     </div>
 
-    <div class="product-quantity-container">
+    <div class="product-quantity-container ">
       <select>
         <option selected value="1">1</option>
         <option value="2">2</option>
@@ -72,9 +72,15 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
                 quantity:1
             });
         }
+        let cartQuantity=0;
+        cart.forEach((item)=>{
+            cartQuantity+=item.quantity;
+        })
        
-        console.log(cart);
+        document.querySelector('.js-cart-quantity').innerHTML=cartQuantity;
     });
 });
+
+
 
 
